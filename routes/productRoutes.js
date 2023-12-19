@@ -6,13 +6,13 @@ import {
   deleteProductController,
   getProductController,
   getSingleProductController,
-  // productCategoryController,
+  productCategoryController,
   productCountController,
-  // productFiltersController,
+  productFiltersController,
   productListController,
   productPhotoController,
-  // realtedProductController,
-  // searchProductController,
+  realtedProductController,
+  searchProductController,
   updateProductController,
 } from "../controllers/productController.js";
 import { isAdmin, requireSignIn } from "../middlewares/authMiddleware.js";
@@ -56,16 +56,16 @@ router.post("/product-filters", productFiltersController);
 router.get("/product-count", productCountController);
 
 //product per page
-// router.get("/product-list/:page", productListController);
+router.get("/product-list/:page", productListController);
 
 //search product
-// router.get("/search/:keyword", searchProductController);
+router.get("/search/:keyword", searchProductController);
 
 //similar product
-// router.get("/related-product/:pid/:cid", realtedProductController);
+router.get("/related-product/:pid/:cid", realtedProductController);
 
 //category wise product
-// router.get("/product-category/:slug", productCategoryController);
+router.get("/product-category/:slug", productCategoryController);
 
 //payments routes
 //token
